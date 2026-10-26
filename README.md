@@ -4,9 +4,9 @@ A comprehensive, full-scale Point of Sale (POS) and business management system b
 
 ## 📸 Application Previews
 
-### POS Checkout Terminal
-![POS Terminal](screenshots/pos-terminal.png)
-*Fast, touch-friendly checkout interface with barcode support.*
+### Secure Login Portal
+![Login Portal](screenshots/login.png)
+*Secure authentication for Admins, Managers, and Cashiers.*
 
 ### Admin Dashboard & Analytics
 ![Dashboard](screenshots/dashboard.png)
@@ -14,7 +14,7 @@ A comprehensive, full-scale Point of Sale (POS) and business management system b
 
 | Inventory Management | Customer CRM & Credit |
 | :---: | :---: |
-| ![Inventory](screenshots/inventory.png) | ![Customer CRM](screenshots/customer-crm.png) |
+| ![Inventory](screenshots/inventory.png) | ![Customer CRM](screenshots/customer.png) |
 | *Manage products, variants, and stock levels.* | *Track purchase history and customer Udhar (credit).* |
 
 ## 🚀 Comprehensive Feature List
@@ -89,19 +89,16 @@ A comprehensive, full-scale Point of Sale (POS) and business management system b
 ```text
 POS/
 ├── assets/              # CSS, JS, and image files
-│   ├── css/
-│   ├── images/
-│   └── js/
 ├── backend/             # Core PHP logic (Modular)
-│   ├── account/         # Financial and expense tracking
-│   ├── admin/           # Admin dashboard and management
-│   ├── auth/            # Login/Logout and authentication
-│   ├── category/        # Product categories & brands
-│   ├── customer/        # CRM, customer history & Udhar
-│   ├── employee/        # Staff and role management
-│   ├── product/         # Inventory and product catalog
-│   ├── sale/            # POS terminal and transactions
-│   └── settings/        # System configuration
+│   ├── account/
+│   ├── admin/
+│   ├── auth/
+│   ├── category/
+│   ├── customer/
+│   ├── employee/
+│   ├── product/
+│   ├── sale/
+│   └── settings/
 ├── config/              # Database connection and app constants
 ├── database/            # SQL schema and migration files
 ├── frontend/            # Views, UI templates, and Layouts
