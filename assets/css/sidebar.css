@@ -1,0 +1,214 @@
+/* sidebar.css - Simple Design for POS Sidebar */
+/* Management link active state styling */
+
+/* --- Sidebar Base --- */
+.sidebar-wrapper {
+    width: 280px;
+    min-height: 100vh;
+    background: #212529;
+    transition: width 0.3s ease;
+    z-index: 1030;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Brand / Logo --- */
+.sidebar-wrapper .d-flex.align-items-center {
+    padding: 0.5rem 0;
+    letter-spacing: 0.5px;
+}
+
+.sidebar-wrapper .d-flex.align-items-center i.bi-box-seam-fill {
+    font-size: 2rem;
+    color: #0d6efd !important;
+}
+
+.sidebar-wrapper .d-flex.align-items-center span {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: #fff;
+}
+
+/* --- Horizontal Rules --- */
+.sidebar-wrapper hr {
+    margin: 0.75rem 0;
+    opacity: 0.3;
+    border-color: #6c757d;
+}
+
+/* --- Navigation Menu --- */
+.nav-pills .nav-link {
+    border-radius: 0.5rem;
+    padding: 0.65rem 1rem;
+    margin-bottom: 0.15rem;
+    color: #e9ecef;
+    transition: all 0.2s ease;
+}
+
+.nav-pills .nav-link:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+/* Active state for individual nav links (single links like Home, Settings) */
+.nav-pills .nav-link.active {
+    background: #0d6efd;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(13, 110, 253, 0.3);
+}
+
+/* --- Active state for dropdown toggle links (Management, E-Commerce) --- */
+.nav-pills .nav-link.active-dropdown {
+    background: rgba(13, 110, 253, 0.15);
+    color: #fff;
+    border-left: 3px solid #0d6efd;
+}
+
+/* Active state for sub-menu items (Dashboard, Analytics, etc.) */
+.sub-menu .nav-link.active-sub {
+    background: rgba(13, 110, 253, 0.12);
+    color: #fff !important;
+    border-left: 3px solid #0d6efd;
+    padding-left: 1.8rem;
+}
+
+/* Icons inside nav */
+.nav-pills .nav-link i {
+    font-size: 1.15rem;
+    min-width: 1.8rem;
+    text-align: center;
+}
+
+/* Arrow icon for dropdown toggles */
+.nav-pills .nav-link .arrow-icon {
+    transition: transform 0.25s ease;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.nav-pills .nav-link[aria-expanded="true"] .arrow-icon {
+    transform: rotate(180deg);
+}
+
+/* --- Sub-menu (collapsible) --- */
+.sub-menu {
+    padding-left: 0.5rem !important;
+    border-left: 2px solid rgba(255, 255, 255, 0.06);
+    margin-left: 0.75rem;
+}
+
+.sub-menu .nav-link {
+    padding: 0.45rem 1rem 0.45rem 2.2rem;
+    font-size: 0.9rem;
+    color: #adb5bd;
+    border-radius: 0.4rem;
+}
+
+.sub-menu .nav-link:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: #f8f9fa;
+}
+
+/* --- Footer / User Dropdown --- */
+.dropdown {
+    margin-top: auto;
+    padding-top: 0.5rem;
+}
+
+.dropdown-toggle {
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    transition: background 0.2s ease;
+}
+
+.dropdown-toggle:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.dropdown-toggle i.bi-person-circle {
+    font-size: 1.75rem;
+    color: #6c757d;
+}
+
+.dropdown-toggle strong {
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-left: 0.15rem;
+}
+
+/* Dropdown menu (dark theme) */
+.dropdown-menu-dark {
+    background: #2b3035;
+    border: 1px solid #444;
+    border-radius: 0.5rem;
+    padding: 0.25rem 0;
+    min-width: 200px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.dropdown-menu-dark .dropdown-item {
+    color: #e9ecef;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+}
+
+.dropdown-menu-dark .dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+.dropdown-menu-dark .dropdown-item.text-danger {
+    color: #ff6b6b !important;
+}
+
+.dropdown-menu-dark .dropdown-item.text-danger:hover {
+    background: rgba(255, 0, 0, 0.15);
+    color: #ff8787 !important;
+}
+
+.dropdown-divider {
+    border-color: #3d4247;
+    margin: 0.3rem 0;
+}
+
+/* --- Scroll behavior (optional) --- */
+.sidebar-wrapper {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #4a4f55 transparent;
+}
+
+.sidebar-wrapper::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar-wrapper::-webkit-scrollbar-thumb {
+    background: #4a4f55;
+    border-radius: 10px;
+}
+
+/* --- Responsive tweaks (optional) --- */
+@media (max-width: 768px) {
+    .sidebar-wrapper {
+        width: 100%;
+        min-height: auto;
+        padding: 0.75rem 1rem !important;
+    }
+    .sidebar-wrapper .d-flex.align-items-center span {
+        font-size: 1.1rem;
+    }
+    .sub-menu {
+        padding-left: 0 !important;
+        margin-left: 0;
+        border-left: none;
+    }
+    .sub-menu .nav-link {
+        padding-left: 2.5rem;
+    }
+    .dropdown-menu-dark {
+        min-width: 160px;
+    }
+}

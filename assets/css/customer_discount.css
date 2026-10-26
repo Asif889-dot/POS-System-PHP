@@ -1,0 +1,301 @@
+/* =========================================================
+   customer_discount.css
+   Styles for frontend/admin/customer_discount.php
+   Companion to sidebar.css (does NOT modify sidebar)
+   Does NOT affect customers.php or all_customers.php
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   Main content area
+   --------------------------------------------------------- */
+.main-content {
+    min-width: 0;
+    padding: 1.5rem 1.75rem;
+    background: #f5f6f8;
+}
+@media (max-width: 768px) {
+    .main-content { padding: 1rem; }
+}
+
+/* ---------------------------------------------------------
+   Page header
+   --------------------------------------------------------- */
+header h2 {
+    letter-spacing: -0.01em;
+}
+header .text-muted {
+    font-size: .88rem;
+}
+
+/* ---------------------------------------------------------
+   Search bar (pill style)
+   --------------------------------------------------------- */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #dde1e7;
+    border-radius: .55rem;
+    padding: .35rem .6rem;
+    min-width: 260px;
+    transition: border-color .15s, box-shadow .15s;
+}
+.search-bar:focus-within {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 .18rem rgba(13,110,253,.15);
+}
+.search-bar .search-icon {
+    color: #9aa1ab;
+    font-size: .9rem;
+    margin-right: .4rem;
+}
+.search-bar .search-input {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    width: 100%;
+    font-size: .9rem;
+    padding: .25rem 0;
+}
+.search-bar .search-input::placeholder { color: #9aa1ab; }
+.search-bar .search-clear {
+    color: #9aa1ab;
+    margin-left: .35rem;
+    font-size: .8rem;
+    line-height: 1;
+    text-decoration: none;
+}
+.search-bar .search-clear:hover { color: #dc3545; }
+
+/* ---------------------------------------------------------
+   Summary chips (All / Active / Expiring / Inactive)
+   --------------------------------------------------------- */
+.summary-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    padding: .45rem .85rem;
+    border-radius: .55rem;
+    background: #fff;
+    border: 1px solid #dde1e7;
+    color: #4a4f58;
+    font-size: .88rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all .15s ease;
+}
+.summary-chip:hover {
+    border-color: #b8c0cc;
+    color: #212529;
+    background: #fafbfc;
+    text-decoration: none;
+}
+.summary-chip.active {
+    border-color: #0d6efd;
+    background: #eff5ff;
+    color: #0d6efd;
+    font-weight: 600;
+}
+.summary-chip.active:hover { background: #e6f0ff; }
+.summary-chip .badge {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .3em .55em;
+}
+
+/* ---------------------------------------------------------
+   Form card (left column)
+   --------------------------------------------------------- */
+.form-card .card-header {
+    border-bottom: 1px solid #eef0f4;
+}
+.form-card .card-header h5 {
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+}
+.form-card .card-body {
+    padding-top: 1rem;
+}
+
+/* Form controls — consistent focus ring and radius */
+.form-card .form-label.fw-semibold {
+    font-size: .85rem;
+    color: #3f4652;
+    margin-bottom: .35rem;
+}
+.form-card .form-control,
+.form-card .form-select {
+    border-radius: .45rem;
+    border-color: #d8dbe1;
+    font-size: .92rem;
+    padding: .5rem .75rem;
+}
+.form-card .form-control:focus,
+.form-card .form-select:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 .18rem rgba(13,110,253,.15);
+}
+.form-card .form-control:disabled {
+    background: #f4f6f8;
+    color: #99a0aa;
+    cursor: not-allowed;
+}
+.form-card .form-control::placeholder { color: #9aa1ab; }
+.form-card .invalid-feedback { font-size: .78rem; }
+
+/* was-validated invalid state */
+.form-card .was-validated .form-control:invalid,
+.form-card .was-validated .form-select:invalid {
+    border-color: #dc3545;
+}
+.form-card .was-validated .form-control:invalid:focus {
+    box-shadow: 0 0 0 .18rem rgba(220,53,69,.15);
+}
+
+/* Small helper text under fields */
+.form-card small.text-muted[style*=".72rem"] {
+    display: block;
+    margin-top: .2rem;
+}
+
+/* ---------------------------------------------------------
+   List card (right column)
+   --------------------------------------------------------- */
+.list-card .card-header {
+    border-bottom: 1px solid #eef0f4;
+}
+.list-card .card-header h5 {
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+}
+.list-card .card-header .badge {
+    font-size: .72rem;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+.list-card .table > :not(caption) > * > * {
+    padding: .75rem;
+    vertical-align: middle;
+}
+.list-card .table thead.table-light th {
+    background: #f7f8fa;
+    color: #5b6270;
+    font-size: .74rem;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-bottom: 1px solid #e7e9ee;
+    white-space: nowrap;
+}
+.list-card .table-hover > tbody > tr:hover > * {
+    background-color: #f3f6fc;
+}
+.list-card .table td small {
+    font-size: .82rem;
+}
+
+/* Faded appearance for inactive / expired rules */
+.list-card .table tr.row-inactive td {
+    opacity: .68;
+}
+.list-card .table tr.row-inactive:hover td {
+    opacity: 1;
+}
+
+/* ---------------------------------------------------------
+   Discount value badge (pill in "Discount" column)
+   --------------------------------------------------------- */
+.discount-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: .28rem .65rem;
+    border-radius: 1rem;
+    font-size: .85rem;
+    font-weight: 700;
+    letter-spacing: .01em;
+    line-height: 1.2;
+}
+.discount-badge.pct {
+    background: #e0ebff;
+    color: #0d6efd;
+}
+.discount-badge.fixed {
+    background: #fff3cd;
+    color: #664d03;
+}
+
+/* ---------------------------------------------------------
+   Soft badges — fallback if Bootstrap 5.0/5.1 is cached
+   --------------------------------------------------------- */
+.bg-success-subtle   { background-color: #d1e7dd !important; }
+.bg-secondary-subtle { background-color: #e2e3e5 !important; }
+.bg-warning-subtle   { background-color: #fff3cd !important; }
+.bg-danger-subtle    { background-color: #f8d7da !important; }
+.badge.bg-success-subtle.text-success     { color: #0f5132 !important; }
+.badge.bg-secondary-subtle.text-secondary { color: #41464b !important; }
+.badge.bg-warning-subtle.text-warning     { color: #664d03 !important; }
+.badge.bg-danger-subtle.text-danger       { color: #842029 !important; }
+
+/* ---------------------------------------------------------
+   Table action buttons
+   --------------------------------------------------------- */
+.list-card td .btn.btn-sm {
+    padding: .32rem .55rem;
+    line-height: 1;
+    border-radius: .4rem;
+}
+.list-card td .btn.btn-sm i {
+    font-size: .85rem;
+    vertical-align: -1px;
+}
+.list-card td form.d-inline { display: inline-block; }
+
+/* ---------------------------------------------------------
+   Flash messages
+   --------------------------------------------------------- */
+.alert {
+    border-radius: .5rem;
+    border: 1px solid transparent;
+}
+.alert-success { background: #ecfdf3; border-color: #b8e6c7; color: #0b6b3a; }
+.alert-danger  { background: #fef2f2; border-color: #f5c2c7; color: #842029; }
+
+/* ---------------------------------------------------------
+   Empty state
+   --------------------------------------------------------- */
+.list-card tbody td[colspan] .bi-ticket-perforated {
+    color: #c5cad1;
+}
+
+/* ---------------------------------------------------------
+   Print — clean list output
+   --------------------------------------------------------- */
+@media print {
+    .sidebar-wrapper,
+    .search-bar,
+    .summary-chip,
+    .form-card,
+    .list-card td .btn,
+    .list-card td form { display: none !important; }
+
+    body { background: #fff !important; }
+    .main-content { padding: 0; }
+    .list-card {
+        box-shadow: none !important;
+        border: 1px solid #ccc;
+    }
+    .list-card .table { font-size: 11px; }
+    .list-card .card-header .badge { display: none; }
+    .discount-badge {
+        background: #fff !important;
+        color: #000 !important;
+        border: 1px solid #999;
+    }
+    .badge {
+        background: #fff !important;
+        color: #000 !important;
+        border: 1px solid #999;
+    }
+}

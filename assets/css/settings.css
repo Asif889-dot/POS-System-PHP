@@ -1,0 +1,201 @@
+/* =========================================================
+   settings.css — Settings page
+   Companion to sidebar.css
+   ========================================================= */
+
+.main-content {
+    min-width: 0;
+    padding: 1.5rem 1.75rem;
+    background: #f5f6f8;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        padding: 1rem;
+    }
+}
+
+/* ---------------- Tabs ---------------- */
+.settings-tabs {
+    gap: .35rem;
+    border-bottom: 1px solid #eef0f4;
+    padding-bottom: .5rem;
+}
+
+.settings-tabs .nav-link {
+    color: #5b6270;
+    border-radius: .5rem;
+    font-size: .92rem;
+    font-weight: 500;
+    padding: .55rem .9rem;
+    transition: all .15s ease;
+}
+
+.settings-tabs .nav-link:hover {
+    background: #eef2f8;
+    color: #0d6efd;
+}
+
+.settings-tabs .nav-link.active {
+    background: #0d6efd;
+    color: #fff;
+    box-shadow: 0 .15rem .35rem rgba(13, 110, 253, .2);
+}
+
+.settings-tabs .nav-link i {
+    font-size: .95rem;
+}
+
+/* ---------------- Cards ---------------- */
+.tab-content .card {
+    border-radius: .65rem;
+    overflow: hidden;
+}
+
+.tab-content .card-header {
+    padding: 1rem 1.15rem .6rem;
+    border-bottom: 1px solid #eef0f4;
+}
+
+.tab-content .card-header h5 {
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+}
+
+.tab-content .card-header small {
+    font-size: .82rem;
+    display: block;
+    margin-top: .15rem;
+}
+
+.tab-content .card-body {
+    padding: 1.15rem;
+}
+
+/* ---------------- Form controls ---------------- */
+.form-label.fw-semibold {
+    font-size: .85rem;
+    color: #3f4652;
+    margin-bottom: .35rem;
+}
+
+.form-control,
+.form-select {
+    border-radius: .45rem;
+    border-color: #d8dbe1;
+    font-size: .92rem;
+    padding: .5rem .75rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 .18rem rgba(13, 110, 253, .15);
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+
+.form-control::placeholder {
+    color: #9aa1ab;
+}
+
+small.text-muted {
+    font-size: .78rem;
+    display: block;
+    margin-top: .25rem;
+}
+
+/* ---------------- Toggle switches ---------------- */
+.form-check-input {
+    width: 2.4em;
+    height: 1.3em;
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.form-check-input:focus {
+    box-shadow: 0 0 0 .18rem rgba(13, 110, 253, .15);
+}
+
+.form-check-label {
+    font-size: .9rem;
+    color: #4a4f58;
+    cursor: pointer;
+    margin-left: .35rem;
+}
+
+/* ---------------- Sticky save bar ---------------- */
+.settings-savebar {
+    position: sticky;
+    bottom: 0;
+    background: #fff;
+    border-top: 1px solid #eef0f4;
+    border-radius: .65rem;
+    padding: .9rem 1.1rem;
+    box-shadow: 0 -.3rem .8rem rgba(15, 23, 42, .04);
+    z-index: 10;
+}
+
+.settings-savebar small {
+    font-size: .82rem;
+    margin: 0;
+    display: inline;
+}
+
+.settings-savebar .btn {
+    border-radius: .45rem;
+    font-size: .9rem;
+    padding: .5rem 1rem;
+}
+
+/* ---------------- Flash ---------------- */
+.alert {
+    border-radius: .5rem;
+}
+
+.alert-success {
+    background: #ecfdf3;
+    border-color: #b8e6c7;
+    color: #0b6b3a;
+}
+
+.alert-danger {
+    background: #fef2f2;
+    border-color: #f5c2c7;
+    color: #842029;
+}
+
+/* ---------------- Print ---------------- */
+@media print {
+
+    .sidebar-wrapper,
+    .settings-tabs,
+    .settings-savebar,
+    header .btn {
+        display: none !important;
+    }
+
+    body {
+        background: #fff !important;
+    }
+
+    .main-content {
+        padding: 0;
+    }
+
+    .tab-content .tab-pane {
+        display: block !important;
+        opacity: 1 !important;
+    }
+
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #ccc;
+    }
+}

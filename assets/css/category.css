@@ -1,0 +1,40 @@
+    /* Category Management Styling */
+
+.main-content {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+/* Category Icon Box in Table */
+.category-icon-box {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Image Preview Styling */
+#imagePreview {
+  object-fit: cover;
+  border: 1px solid #dee2e6;
+}
+
+/* Search input adjustments */
+.style-search .input-group-text,
+.style-search .form-control {
+  font-size: 0.875rem;
+}
+
+.style-search .form-control:focus {
+  box-shadow: none;
+  border-color: #dee2e6;
+}
+
+/* Responsiveness tweaks for smaller phones */
+@media (max-width: 576px) {
+  .table > :not(caption) > * > * {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}

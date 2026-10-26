@@ -1,0 +1,117 @@
+/* =========================================================
+   customer.css — Customer page (mirrors products page layout)
+   Companion to sidebar.css
+   ========================================================= */
+
+/* ---- Main content area next to sidebar ---- */
+.main-content {
+  min-width: 0;
+  padding: 1.5rem 1.75rem;
+  background: #f5f6f8;
+}
+@media (max-width: 768px) {
+  .main-content { padding: 1rem; }
+}
+
+/* ---- Search bar in header ---- */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #dde1e7;
+  border-radius: .55rem;
+  padding: .35rem .6rem;
+  min-width: 260px;
+  transition: border-color .15s, box-shadow .15s;
+}
+.search-bar:focus-within {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 .18rem rgba(13,110,253,.15);
+}
+.search-bar .search-icon {
+  color: #9aa1ab;
+  font-size: .9rem;
+  margin-right: .4rem;
+}
+.search-bar .search-input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  width: 100%;
+  font-size: .9rem;
+  padding: .25rem 0;
+}
+.search-bar .search-input::placeholder { color: #9aa1ab; }
+.search-bar .search-clear {
+  color: #9aa1ab;
+  margin-left: .35rem;
+  font-size: .8rem;
+  line-height: 1;
+  text-decoration: none;
+}
+.search-bar .search-clear:hover { color: #dc3545; }
+
+/* ---- Avatar circle in table rows ---- */
+.avatar-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #e0ebff;
+  color: #0d6efd;
+  font-weight: 700;
+  font-size: .95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ---- Fallback soft badges (in case Bootstrap 5.0/5.1 CSS is cached) ---- */
+.bg-success-subtle   { background-color: #d1e7dd !important; }
+.bg-secondary-subtle { background-color: #e2e3e5 !important; }
+.bg-info-subtle      { background-color: #cff4fc !important; }
+.bg-warning-subtle   { background-color: #fff3cd !important; }
+.badge.bg-success-subtle.text-success     { color: #0f5132 !important; }
+.badge.bg-secondary-subtle.text-secondary { color: #41464b !important; }
+.badge.bg-info-subtle.text-info           { color: #055160 !important; }
+.badge.bg-warning-subtle.text-warning     { color: #664d03 !important; }
+
+/* ---- Table action buttons ---- */
+.table td .btn.btn-sm {
+  padding: .32rem .55rem;
+  line-height: 1;
+  border-radius: .4rem;
+}
+.table td .btn.btn-sm i {
+  font-size: .85rem;
+  vertical-align: -1px;
+}
+.table td form.d-inline { display: inline-block; }
+
+/* ---- Cards tighter like product page ---- */
+.card .card-header h5 { letter-spacing: -0.01em; }
+.card .form-control,
+.card .form-select {
+  border-radius: .45rem;
+  border-color: #d8dbe1;
+  font-size: .92rem;
+  padding: .5rem .75rem;
+}
+.card .form-control:focus,
+.card .form-select:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 .18rem rgba(13,110,253,.15);
+}
+
+/* ---- Print ---- */
+@media print {
+  .sidebar-wrapper,
+  .search-bar,
+  #customerForm .d-grid,
+  .table td .btn,
+  .table td form { display: none !important; }
+
+  body { background: #fff !important; }
+  .main-content { padding: 0; }
+  .card { box-shadow: none !important; border: 1px solid #ccc; }
+}
